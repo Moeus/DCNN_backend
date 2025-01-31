@@ -33,9 +33,3 @@ def solve(data):
         # 预测
         y_pred = model.predict(X.drop("是否流失",axis=1))
         return f"模型认为该客户可能流失,流失概率为{y_pred[0][0]*100:.2f}%" if y_pred[0][0]>=0.4 else "模型认为该客户不会流失"
-
-# if "__name__"=="__name__":
-#     df=pd.read_csv("model_file/data.csv")
-#     df=df[col]
-#     print(df.columns) 
-#     print(solve(df.iloc[2:3].reset_index(drop=True)))

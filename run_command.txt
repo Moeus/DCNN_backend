@@ -1,6 +1,11 @@
-
+#使用pip安装依赖
 pip install -r requirements.txt
 
+#pip安装依赖时的项目启动命令
+gunicorn -c Gunicorn_config.py app:app
+
+#使用poetry安装依赖
 poetry install
 
+#使用poetry启动项目
 poetry run gunicorn -c Gunicorn_config.py app:app

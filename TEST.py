@@ -4,8 +4,9 @@ import random
 import time
 from concurrent.futures import ThreadPoolExecutor
 
+#请求的地址和端口，路由为/predict
 # url = 'https://dcnn-backend.onrender.com/predict'
-url = 'http://192.168.1.16:5000/predict'
+url = 'http://192.168.202.129:8000/predict'
 
 def run():
     try:
@@ -45,5 +46,3 @@ if __name__ == "__main__":
     print()
     print(f"测试用时{e - s:.2f}S")
     print(f"单个线程内的平均用时为: {sum(durations)/len(durations):.2f}")
-
-    #sdjabnwofa
