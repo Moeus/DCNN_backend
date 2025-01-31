@@ -1,0 +1,6 @@
+
+pip install -r requirements.txt
+
+poetry install
+
+poetry run gunicorn -c Gunicorn_config.py app:app
