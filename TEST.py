@@ -45,3 +45,5 @@ if __name__ == "__main__":
     print()
     print(f"测试用时{e - s:.2f}S")
     print(f"单个线程内的平均用时为: {sum(durations)/len(durations):.2f}")
+
+    #sdjabnwofa
