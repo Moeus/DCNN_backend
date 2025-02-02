@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 #请求的地址和端口，路由为/predict
 # url = 'https://dcnn-backend.onrender.com/predict'
 url = 'http://192.168.202.129:8000/predict'
+# url="https://113.219.237.121:48110//predict"
 
 def run():
     try:
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     # 创建一个线程池，最大线程数可以根据你的需求调整
     with ThreadPoolExecutor(max_workers=100) as executor:
         # 提交 1000 个任务到线程池
-        futures = [executor.submit(run) for _ in range(1000)]
+        futures = [executor.submit(run) for _ in range(1)]
         # 等待所有任务完成
         for future in futures:
             result = future.result()
