@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 #请求的地址和端口，路由为/predict
 # url = 'https://dcnn-backend.onrender.com/predict'
-url = 'http://192.168.202.129:8000/predict'
+url = 'https://moving-dashing-sawfly.ngrok-free.app/predict'
 # url="https://113.219.237.121:48110//predict"
 
 def run():
@@ -18,11 +18,11 @@ def run():
                      '合同签订方式', '是否开通电子账单', '付款方式', '月度费用', '总费用']]
         send_data = data.iloc[num:num + 1].reset_index(drop=True)
         print(f"选取data.csv中第{num + 1}行数据传入服务端")
-        # print(send_data)
+        print(send_data)
         start = time.time()
         response = requests.post(url, json=send_data.to_dict())
         print("服务端正常响应" if response else "服务器未响应")
-        # print(response.json())
+        print(response.json())
         end = time.time()
         print(f"本次请求耗时{end - start:.2f}S")
         return end - start
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     # 创建一个线程池，最大线程数可以根据你的需求调整
     with ThreadPoolExecutor(max_workers=100) as executor:
         # 提交 1000 个任务到线程池
-        futures = [executor.submit(run) for _ in range(1)]
+        futures = [executor.submit(run) for _ in range(50)]
         # 等待所有任务完成
         for future in futures:
             result = future.result()

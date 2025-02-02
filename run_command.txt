@@ -9,3 +9,23 @@ poetry install
 
 #使用poetry启动项目
 poetry run gunicorn -c Gunicorn_config.py app:app
+
+#nginx运行
+启动
+sudo systemctl start nginx
+重新加载
+sudo nginx -s reload
+关闭
+sudo nginx -s quit
+配置文件地址
+etc/nginx/nginx.conf
+
+#查看端口被监听状态
+sudo lsof -i :80
+
+#ngrok运行
+
+ngrok http --url=moving-dashing-sawfly.ngrok-free.app 80
+
+#ngrok后台运行情况查看，服务器内
+http://localhost:4040
