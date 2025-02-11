@@ -5,9 +5,9 @@ import os
 #环境变量
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 # 读取pkl模型
-ordina_lencoder = joblib.load('model_file/ordina_lencoder.pkl')
-min_max_scaler = joblib.load('model_file/min_max_scaler.pkl')
-model = keras.models.load_model('model_file/ANN_model.keras')
+ordina_lencoder = joblib.load('ordina_lencoder.pkl')
+min_max_scaler = joblib.load('min_max_scaler.pkl')
+model = keras.models.load_model('ANN_model.keras')
 
 col=['是否老年人', '是否有配偶', '是否经济独立', '用户入网时间', '是否开通多条电话业务', '是否开通互联网服务',
        '是否开通网络安全服务', '是否开通在线备份服务', '是否开通设备保护服务', '是否开通技术支持业务', '是否开通网络电视', 

@@ -25,7 +25,7 @@ sudo lsof -i :80
 
 #ngrok运行
 
-ngrok http --url=moving-dashing-sawfly.ngrok-free.app 80
+ngrok http --url=moving-dashing-sawfly.ngrok-free.app 8000
 
 #ngrok后台运行情况查看，服务器内
 http://localhost:4040

@@ -5,13 +5,12 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 
 #请求的地址和端口，路由为/predict
-# url = 'https://dcnn-backend.onrender.com/predict'
 url = 'https://moving-dashing-sawfly.ngrok-free.app/predict'
-# url="https://113.219.237.121:48110//predict"
+
 
 def run():
     try:
-        data = pd.read_csv('model_file/data.csv')
+        data = pd.read_csv('data.csv')
         num = random.randint(0, 7000)
         data = data[['是否老年人', '是否有配偶', '是否经济独立', '用户入网时间', '是否开通多条电话业务', '是否开通互联网服务',
        '是否开通网络安全服务', '是否开通在线备份服务', '是否开通设备保护服务', '是否开通技术支持业务', '是否开通网络电视', 
